@@ -1,18 +1,27 @@
 package br.com.qualityfactory.el.elctrl.test;
 
-import java.util.List;
-
-import javax.inject.Inject;
-
+import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+
+import br.com.caelum.vraptor.Consumes;
+import br.com.qualityfactory.el.elctrl.VerbController;
 
 public class VerbTestController {
+
+	@Mock
+	private VerbController controller;
 	
-	@Inject
-	private VerbTestController controller;
+	@Before
+	public void init(){
+		MockitoAnnotations.initMocks(this);
+	}
 	
+	@Consumes("application/json")
 	@Test
 	public void getAllVerbs() throws Exception{
-		//List<VerbModel> controller.getAllVerbs();
+		//Mockito.when(controller.listAll()).thenReturn("algumacoisa");
 	}
 }
